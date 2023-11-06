@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if not user.is_authenticated %}
+<div class="slogan" >
+    <h1 >TRADEGRAMER📈<h1>
+    <h3> Build Strong Portfolio With Us</h3>
+    </div>
+    <div style="margin-top: 1px;">
+<center><h3>Login First...</h3></center>
+<center><a href="/accounts/login"><button class="btn btn-primary">Click Here to Login...</button></a></center>
+</div>
+{% endif %}
+{% if user.is_authenticated %}
+<div >
+    <ul class="list-group">
+       <center>
+        <li class="list-group-item" >
+            <div class="row">
+            <div class="col-2"><b>BANKNIFTY</b></div>
+            <div class="col-2">44588.30</div>
+            <div class="col-2"></div>
+            <div class="col-2"><b>NIFTY</b></div>
+            <div class="col-2">19716.45</div>
+        </div>
+        </li>
+  
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-2"><b>Stock Name</b></div>
+                <div class="col-2"><b>Price</b></div>
+                <div class="col-2"><b>Open</b></div>
+                <div class="col-2"><b>Close</b></div>
+                <div class="col-2"><b>BUY/SELL</b></div>
+            </div>
+        </li>
+        {% for s in stocks %}
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-2"><a href="chart/{{s.id}}/" style="text-decoration: none;">{{s.Stock}}</a></div>
+                <div class="col-2">{{s.Price}}</div>
+                <div class="col-2">{{s.Open}}</div>
+                <div class="col-2">{{s.Close}}</div>
+                <div class="col-2"> <form action="{% url 'detail' %}">
+                    <button class="btn btn-danger">BUY/SELL</button>
+                    <!-- <input type="submit" value="Click For BUY/SELL" name="" id=""> -->
+                 </form></div>
+            </div>
+        </li>
+   
+    {% endfor %}
+</center>
+</ul>
+</div>
+{% endif %}
+    {% endblock content %}

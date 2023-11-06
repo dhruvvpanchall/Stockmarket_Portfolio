@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if not user.is_authenticated %}
+<div class="slogan" >
+    <h1 >TRADEGRAMER📈<h1>
+    <h3> Build Strong Portfolio With Us</h3>
+    </div>
+    <div style="margin-top: 1px;">
+<center><h3>Login First...</h3></center>
+<center><a href="/accounts/login"><button class="btn btn-primary">Click Here to Login...</button></a></center>
+</div>
+{% endif %}
+{% if user.is_authenticated %}
+<div class="container-bg" >
+    <div class="container mt-4">
+        <div class="row">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" style="background: transparent;">
+                    <div class="card-body">
+                        <h3 class="mb-0">Basic Plan</h3>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Subscription Details</h4>
+                        <ul class="list-unstyled">
+                            <li>Access to trading platform</li>
+                            <li>Real-time market data</li>
+                            <li>Basic support</li>
+                        </ul>
+                        <h4 class="card-title">Pricing</h4>
+                        <p class="card-text">Rs.199/month</p>
+                        <a href="#" class="btn btn-primary">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="background: transparent;">
+                    <div class="card-body">
+                        <h3 class="mb-0">Pro Plan</h3>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Subscription Details</h4>
+                        <ul class="list-unstyled">
+                            <li>Access to advanced trading tools</li>
+                            <li>Real-time market data</li>
+                            <li>Premium support</li>
+                        </ul>
+                        <h4 class="card-title">Pricing</h4>
+                        <p class="card-text">Rs.499/month</p>
+                        <a href="#" class="btn btn-primary">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card" style="background: transparent;">
+                    <div class="card-body">
+                        <h3 class="mb-0">Premium Plan</h3>
+                        <hr>
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">Subscription Details</h4>
+                        <ul class="list-unstyled">
+                            <li>Access to premium trading features</li>
+                            <li>Real-time market data</li>
+                            <li>Dedicated 24/7 support</li>
+                        </ul>
+                        <h4 class="card-title">Pricing</h4>
+                        <p class="card-text">Rs.999/month</p>
+                        <a href="#" class="btn btn-primary">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+{% endif %}
+{% endblock content %}
